@@ -140,19 +140,19 @@ function moveBoat (boatArray: any[], boatRotateArray: string[]) {
     }
     cursor.setFlag(SpriteFlag.Invisible, true)
     iterator = 0
-    for (let currentBoatSprite22 of boatArray) {
+    for (let currentBoatSprite3 of boatArray) {
         if (boatRotateArray[currentBoat] == "up") {
-            grid.place(currentBoatSprite22, tiles.getTileLocation(grid.spriteCol(cursor), grid.spriteRow(cursor) + iterator))
+            grid.place(currentBoatSprite3, tiles.getTileLocation(grid.spriteCol(cursor), grid.spriteRow(cursor) + iterator))
         } else {
-            grid.place(currentBoatSprite22, tiles.getTileLocation(grid.spriteCol(cursor) + iterator, grid.spriteRow(cursor)))
+            grid.place(currentBoatSprite3, tiles.getTileLocation(grid.spriteCol(cursor) + iterator, grid.spriteRow(cursor)))
         }
         iterator += 1
     }
 }
 function isHitOrMiss (enemyBoats: Sprite[][], hitOrMissPX: Sprite[]) {
     for (let index2 = 0; index2 <= 2; index2++) {
-        for (let currentBoatSprite3 of enemyBoats[index2]) {
-            if (grid.spriteCol(currentBoatSprite3) == grid.spriteCol(cursor) && grid.spriteRow(currentBoatSprite3) == grid.spriteRow(cursor)) {
+        for (let currentBoatSprite4 of enemyBoats[index2]) {
+            if (grid.spriteCol(currentBoatSprite4) == grid.spriteCol(cursor) && grid.spriteRow(currentBoatSprite4) == grid.spriteRow(cursor)) {
                 boomSprite = sprites.create(img`
                     . . . . 2 2 2 2 2 2 2 2 . . . . 
                     . . . 2 4 4 4 5 5 4 4 4 2 2 2 . 
@@ -573,8 +573,8 @@ function initP2 () {
     }
 }
 function makeBoatInvisible (boatArray: Sprite[]) {
-    for (let currentBoatSprite4 of boatArray) {
-        currentBoatSprite4.setFlag(SpriteFlag.Invisible, true)
+    for (let currentBoatSprite5 of boatArray) {
+        currentBoatSprite5.setFlag(SpriteFlag.Invisible, true)
     }
 }
 function turnBoat (boatNum: number, boatRotateArray: string[]) {
@@ -585,10 +585,10 @@ function turnBoat (boatNum: number, boatRotateArray: string[]) {
     }
 }
 function isOverlapping (boatSpriteArrayPX: Sprite[][]) {
-    for (let index22 = 0; index22 <= currentBoat - 1; index22++) {
-        for (let previousBoatSprite of boatSpriteArrayPX[index22]) {
-            for (let currentBoatSprite5 of boatSpriteArrayPX[currentBoat]) {
-                if (grid.spriteCol(previousBoatSprite) == grid.spriteCol(currentBoatSprite5) && grid.spriteRow(previousBoatSprite) == grid.spriteRow(currentBoatSprite5)) {
+    for (let index3 = 0; index3 <= currentBoat - 1; index3++) {
+        for (let previousBoatSprite of boatSpriteArrayPX[index3]) {
+            for (let currentBoatSprite6 of boatSpriteArrayPX[currentBoat]) {
+                if (grid.spriteCol(previousBoatSprite) == grid.spriteCol(currentBoatSprite6) && grid.spriteRow(previousBoatSprite) == grid.spriteRow(currentBoatSprite6)) {
                     return 1
                 }
             }
